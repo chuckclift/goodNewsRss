@@ -16,9 +16,10 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from frontpage import views as frontpage_views
 
 urlpatterns = [
-    url(r'^$', include('frontpage.urls')), 
+    url(r'^$', frontpage_views.index), 
     url(r'^admin/', admin.site.urls),
     url('^login/', auth_views.login),
     url(r'^sign-out/$', auth_views.logout, {'next_page': '/'}, name='sign-out'),
