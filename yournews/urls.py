@@ -20,6 +20,8 @@ from frontpage import views as frontpage_views
 
 urlpatterns = [
     url(r'^$', frontpage_views.index), 
+    url(r'^like/(?P<title>[a-z]{1,200})/$', frontpage_views.like), 
+    url(r'^dislike/(?P<title>[a-z]{1,200})/$', frontpage_views.dislike), 
     url(r'^admin/', admin.site.urls),
     url('^login/', auth_views.login),
     url(r'^sign-out/$', auth_views.logout, {'next_page': '/'}, name='sign-out'),
