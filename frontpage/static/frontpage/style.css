@@ -1,0 +1,39 @@
+body {
+    background-color: #152737;
+    margin: 0px; 
+}
+
+p {
+    color: white; 
+}
+
+li {
+    color: white;
+}
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: green; 
+}
+
+
+#mainwindow {
+    background-color: black;
+    margin: 0px; 
+    padding: 20px;
+    width: 100%;
+    text-align: left; 
+}
+
+
+#titlebar {
+    background-color: #1D2F3E;
+    margin: 0px; 
+    padding: 20px;
+    width: 100%; 
+    text-align: left; 
+    
+}
