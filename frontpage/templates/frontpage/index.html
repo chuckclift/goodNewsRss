@@ -25,8 +25,10 @@
             {% for article, fixed_title in article_list %}
                 <li>
                     <a href="{{ article.url }}">{{ article.title }}</a>
-                    <a href="/like/{{ fixed_title }}">like</a>
-                    <a href="/dislike/{{ fixed_title }}">dislike</a>
+                    <div id=ratePanel" style="float:right; width: 80px; ">
+                        <a href="/like/{{ fixed_title }}" style="float: left;">like</a>
+                        <a href="/dislike/{{ fixed_title }}" style="float: right;">dislike</a>
+                    </div>
                 </li>
             {% endfor %}
         </ul>
