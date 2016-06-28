@@ -22,8 +22,21 @@
     <p id="header">A bunch of interesting stuff</p>
     {% if article_list %}
         <ul>
-            {% for article in article_list %}
-                <li><a href="{{ article.url  }}">{{ article.title }}</li>
+            {% for article, fixed_title in article_list %}
+                <li>
+                    <a href="{{ article.url }}">{{ article.title }}</a>
+                    <form method="post" action="/like/{{ fixed_title  }}/" class="rateForm">
+                        {% csrf_token %}
+                        <input type="submit" value="like">
+                    </form>
+                    <form method="post" action="/dislike/{{ fixed_title  }}/" class="rateForm">
+                        {% csrf_token %}
+                        <input type="submit" value="dislike">
+                    </form>
+
+
+
+                </li>
             {% endfor %}
         </ul>
     {% else %}
