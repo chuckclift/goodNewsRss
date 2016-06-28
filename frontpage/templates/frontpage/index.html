@@ -25,17 +25,8 @@
             {% for article, fixed_title in article_list %}
                 <li>
                     <a href="{{ article.url }}">{{ article.title }}</a>
-                    <form method="post" action="/like/{{ fixed_title  }}/" class="rateForm">
-                        {% csrf_token %}
-                        <input type="submit" value="like">
-                    </form>
-                    <form method="post" action="/dislike/{{ fixed_title  }}/" class="rateForm">
-                        {% csrf_token %}
-                        <input type="submit" value="dislike">
-                    </form>
-
-
-
+                    <a href="/like/{{ fixed_title }}">like</a>
+                    <a href="/dislike/{{ fixed_title }}">dislike</a>
                 </li>
             {% endfor %}
         </ul>
