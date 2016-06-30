@@ -18,22 +18,28 @@
 </div>
 <p>Welcome, {{ user.username }}.</p>
 <div id="mainwindow">
-    <div style="width: 60%; margin-left: auto; margin-right: auto;">
+  <div style="width: 60%; margin-left: auto; margin-right: auto;">
     <p id="header">A bunch of interesting stuff</p>
     {% if article_list %}
-        <ul>
-            {% for article, fixed_title in article_list %}
-                <li>
-                    <a href="{{ article.url }}">{{ article.title }}</a>
-                    <div id=ratePanel" style="float:right; width: 80px; ">
-                        <a href="/like/{{ fixed_title }}" style="float: left;">like</a>
-                        <a href="/dislike/{{ fixed_title }}" style="float: right;">dislike</a>
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
+      <ul>
+        {% for article, fixed_title in article_list %}
+          <li>
+            <a href="{{ article.url }}">{{ article.title }}</a>
+            <div id=ratePanel" style="float:right; width: 40px; ">
+              <a href="/like/{{ fixed_title }}" style="float: left;">
+                <img  src="{% static 'frontpage/uparrow.png'%}" 
+                      style="width:10px;height:12px;">
+              </a>
+              <a href="/dislike/{{ fixed_title }}" style="float: right;">
+                <img src="{% static 'frontpage/downarrow.png'%}" 
+                     style="width:10px;height:12px;">
+              </a>
+              </div>
+          </li>
+        {% endfor %}
+    </ul>
     {% else %}
-        <p>Sorry, no articles found, please yell at your administrator</p>
+      <p>Sorry, no articles found, please yell at your administrator</p>
     {% endif %}
     </div>
 </div>
