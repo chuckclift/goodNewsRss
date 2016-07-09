@@ -25,7 +25,7 @@ def dislike(request, title):
         return HttpResponseForbidden()
 
     username = request.user.username
-    rating = Article_Rating.objects.create(user=username, title=title, rating=-1)
+    rating = Article_Rating.objects.create(user=username, title=title, rating=0)
     rating.save()
     return HttpResponseRedirect('/')
 
